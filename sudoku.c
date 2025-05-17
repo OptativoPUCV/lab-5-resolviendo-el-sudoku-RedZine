@@ -147,10 +147,12 @@ Node* DFS(Node* initial, int* cont){
       return current;
     }
 
-    List* adj_nodes = (Node*) first(adj_nodes);
-    while(adj_nodes != NULL){
-      push(stack, adj_nodes);
-      adj_nodes = (Node*) next(adj_nodes);
+    List* adj_nodes = get_adj_nodes(current);
+
+    void* temp = first(adj_nodes);
+    while(temp != NULL){
+      push(stack, temp);
+      temp = next(adj_nodes);
     }
     free(adj_nodes);
     free(current);
