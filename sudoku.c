@@ -51,7 +51,19 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
-    return list;
+
+    for (int i = 0; i < 9; i++){
+      for (int j = 0; j < 9; j++){
+        if (n->sudo[i][j] == 0){
+          for (int num = 1; num <= 9; num++){
+            Node* NuevoNodo = copy(n);
+            NuevoNodo->sudo[i][j] = num;
+            pushBack(list, NuevoNodo);
+          }
+        }
+      }
+    }
+    return list; // Retornamos la lista con los nodos adyacentes :p
 }
 
 
