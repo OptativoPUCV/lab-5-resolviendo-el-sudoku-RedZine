@@ -105,13 +105,17 @@ List* get_adj_nodes(Node* n){
           for (int num = 1; num <= 9; num++){
             Node* NuevoNodo = copy(n);
             NuevoNodo->sudo[i][j] = num;
-            pushBack(list, NuevoNodo);
+
+            if (is_valid(NuevoNodo)) pushBack(list, NuevoNodo);
+            else free(NuevoNodo);
           }
+          return list;
         }
       }
     }
     return list; // Retornamos la lista con los nodos adyacentes :p
 }
+
 
 
 int is_final(Node* n){
