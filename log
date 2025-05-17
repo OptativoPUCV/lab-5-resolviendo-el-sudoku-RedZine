@@ -22,3 +22,17 @@ sá., 17 de may. de 2025 14:21:57:
  tests:  7|1
 total_score: 55/70
 6d1db3e
+sá., 17 de may. de 2025 15:13:27: 
+ sudoku.c | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:150:23: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+     List* adj_nodes = (Node*) first(adj_nodes);
+                       ^
+sudoku.c:153:17: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+       adj_nodes = (Node*) next(adj_nodes);
+                 ^
+cc1.exe: all warnings being treated as errors
+15f0332
